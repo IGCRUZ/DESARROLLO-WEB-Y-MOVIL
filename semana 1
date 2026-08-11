@@ -1,0 +1,114 @@
+# DESARROLLO-WEB-Y-MOVIL
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+    	<div class="col" style="background-color:yellow;">
+        	<p>esto es un col 12</p>
+        </div>
+    </div>	
+  	<div class="row">
+      	<div class="col-sm-6" style="background-color:blue;">
+        	<p>esto es un col-6</p>
+      	</div>
+      	<div class="col-sm-6" style="background-color:red;">
+        	<p>esto es un col -6</p>
+      	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-4" style="background-color:black;">
+        	<p style="color:white;">esto es un col-4</p>
+    	</div>
+    	<div class="col-md-4" style="background-color:white;">
+        	<p>esto es un col-4</p>
+    	</div>
+    	<div class="col-md-4" style="background-color:green;">
+        	<p>esto es un col-4</p>
+      	</div>
+    </div>
+    <div class="row">
+    	<div class="col-lg-3" style="background-color:orange;">
+        	<p>esto es un col-3</p>
+    	</div>
+    	<div class="col-lg-3" style="background-color:blue;">
+        	<p>esto es un col-3</p>
+    	</div>
+    	<div class="col-lg-3" style="background-color:purple;">
+        	<p>esto es un col-3</p>
+      	</div>
+        <div class="col-lg-3" style="background-color:pink;">
+        	<p>esto es un col-3</p>
+      	</div>
+    </div>
+    <div class="row">
+    	<div class="col-xs-2" style="background-color:white;">
+        	<p>esto es un col-2</p>
+    	</div>
+    	<div class="col-xs-2" style="background-color:grey;">
+        	<p>esto es un col-2</p>
+    	</div>
+    	<div class="col-xs-2" style="background-color:yellow;">
+        	<p>esto es un col-2</p>
+      	</div>
+        <div class="col-xs-2" style="background-color:green;">
+        	<p>esto es un col-2</p>
+      	</div>
+        <div class="col-xs-2" style="background-color:skyblue;">
+        	<p>esto es un col-2</p>
+      	</div>
+        <div class="col-xs-2" style="background-color:red;">
+        	<p>esto es un col-2</p>
+      	</div>
+    </div>
+    <div class="row">
+    	<div class="col-xs-1" style="background-color:white;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-xs-1" style="background-color:black;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-xs-1" style="background-color:white;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-xs-1" style="background-color:black;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-xs-1" style="background-color:white;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-xs-1" style="background-color:black;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-lg-1" style="background-color:white;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-lg-1" style="background-color:black;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-lg-1" style="background-color:white;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-lg-1" style="background-color:black;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-lg-1" style="background-color:white;">
+        	<p>esto es un col-1</p>
+    	</div>
+        <div class="col-lg-1" style="background-color:black;">
+        	<p>esto es un col-1</p>
+    	</div>
+    </div>
+</div>
+    
+</body>
+</html>
