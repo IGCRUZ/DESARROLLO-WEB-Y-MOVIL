@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA PRINCIPAL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-secondary">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="index.php"><i class="fa fa-android"></i></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="empresa.php" style="color:white;">Empresa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.php" style="color:white;">Productos</a>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal"><?xml version="1.0" ?><svg style="width: 20px; height: 20px;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title/><g id="about"><path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"/><path d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z"/></g></svg></button>
+        </div>
+    </nav>
+    <div class="container-fluid mt-3" style="background-color: lightblue;">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="card h-100">
+                    <img class="card-img-top"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrtfKpCn29s0hNwdPYzH_w-grYHOut5aAPI1ffEvPpmapQLyk49kmfd9E&s=10"
+                        alt="Card image" style="width:100%; height:150px">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Cristiano Ronaldo</h4>
+                        <p class="card-text">Jugador del al-nassr</p>
+                        <button type="button" id="btn-ronaldo" class="btn btn-primary mt-auto">Ver Jugador</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div id="card-messi" class="card h-100">
+                    <img class="card-img-top" src="https://pbs.twimg.com/media/EgSI-tAWsAAhk1Q.jpg" alt="Card image"
+                        style="width:100%; height:150px">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Lionel Messi</h4>
+                        <p class="card-text">Jugador del Inter de Miami</p>
+                        <button type="button" id="btn-messi" class="btn btn-primary mt-auto">Ver Jugador</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="card h-100">
+                    <img id="img-mbappe" class="card-img-top"
+                        src="https://preview.redd.it/where-are-the-mbappe-dicator-memes-coming-from-and-why-v0-erex5v83pqvg1.png?auto=webp&s=17ad438ea21bae713f7e5d2d23f97e785818bcf3"
+                        alt="Card image" style="width:100%; height:150px">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Kylian Mbappe</h4>
+                        <p class="card-text">Jugador del Real Madrid</p>
+                        <button type="button" id="btn-mbappe" class="btn btn-primary mt-auto">Ver Jugador</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="card h-100">
+                    <img class="card-img-top"
+                        src="https://img.asmedia.epimg.net/resizer/v2/A43ZCIYQ45GOPD6RSU4BMQDJKA.jpg?auth=28955647f8c2746ddacbcaef794724da6461afeb5818292923b1c8266be15a5e&width=360"
+                        alt="Card image" style="width:100%; height:150px">
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Jude Bellingham</h4>
+                        <p id="texto-bellingham" class="card-text">Jugador del Real Madrid</p>
+                        <button type="button" id="btn-bellingham" class="btn btn-primary mt-auto">Ver Jugador</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="card h-100">
+                    <img class="card-img-top"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5k8rofrdfzvnDFBaY3fCzVQ-RRRcADfBd3PvwrOPlq-zUYY2z2oLAHxNq&s=10"
+                        alt="Card image" style="width:100%; height:150px">
+                    <div id="cuerpo-haaland" class="card-body d-flex flex-column">
+                        <h4 class="card-title">Erling Haaland</h4>
+                        <p class="card-text">Jugador del Manchester City</p>
+                        <button type="button" id="btn-haaland" class="btn btn-primary mt-auto">Ver Jugador</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                <div class="card h-100">
+                    <img class="card-img-top"
+                        src="https://imagenes.teleamazonas.com/files/main_image_448_252/files/fp/uploads/2026/07/23/6a6299e9d2ca6.r_d.650-22-3800.jpeg"
+                        alt="Card image" style="width:100%; height:150px">
+                    <div class="card-body d-flex flex-column">
+                        <h4 id="titulo-cucurella" class="card-title">Marc Cucurella</h4>
+                        <p class="card-text">Jugador del Real Madrid</p>
+                        <button type="button" id="btn-cucurella" class="btn btn-primary mt-auto">Ver Jugador</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-ronaldo").onclick = function() {
+            this.textContent = "¡Siuuuu!"; 
+            this.classList.replace("btn-primary", "btn-success");
+        };
+
+        document.getElementById("btn-messi").onclick = function() {
+            let tarjeta = document.getElementById("card-messi");
+            tarjeta.style.backgroundColor = "#ffc107";
+        };
+
+        document.getElementById("btn-mbappe").onclick = function() {
+            let imagen = document.getElementById("img-mbappe");
+            if (imagen.style.display === "none") {
+                imagen.style.display = "block";
+            } else {
+                imagen.style.display = "none";
+            }
+        };
+
+        document.getElementById("btn-bellingham").onclick = function() {
+            let descripcion = document.getElementById("texto-bellingham");
+            descripcion.textContent = "¡Campeón de la Champions League!";
+            descripcion.style.fontWeight = "bold";
+        };
+
+        document.getElementById("btn-haaland").onclick = function() {
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = "¡Goleador!";
+            nuevoParrafo.style.color = "red";
+            
+            document.getElementById("cuerpo-haaland").appendChild(nuevoParrafo);
+        };
+
+        document.getElementById("btn-cucurella").onclick = function() {
+            let nombreJugador = document.getElementById("titulo-cucurella").textContent;
+            alert("Has seleccionado para tu equipo a: " + nombreJugador);
+        };
+    </script>
+</body>
+</html>
