@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Chilena - Empanadería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+    body {
+        background-color: #fcfcfc;
+    }
+
+    #navbar {
+        background-color: #E96B12;
+    }
+
+    #carouselExample {
+        width: 100%;
+        margin: 0;
+    }
+
+    .carousel-item img {
+        height: 500px;
+        object-fit: cover;
+        width: 100%;
+        filter: brightness(0.9);
+    }
+
+    .seccion-titulo {
+        color: #E96B12;
+        font-weight: bold;
+        border-bottom: 2px solid #E96B12;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+
+    .check-ingrediente {
+        accent-color: #E96B12;
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+
+    label {
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar" class="navbar navbar-expand-sm sticky-top shadow-sm">
+        <div class="container-fluid">
+            <ul class="navbar-nav align-items-center">
+                <a class="navbar-brand" href="#" onclick="volverAlInicio()" style="padding: 0; margin-right: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" width="180" height="45">
+                        <g fill="#FFFFFF">
+                            <path d="M 15 50 C 15 20, 65 20, 65 50 Z" />
+                            <circle cx="15" cy="50" r="4" />
+                            <circle cx="22" cy="40" r="4" />
+                            <circle cx="32" cy="32" r="4" />
+                            <circle cx="48" cy="32" r="4" />
+                            <circle cx="58" cy="40" r="4" />
+                            <circle cx="65" cy="50" r="4" />
+                            <text x="85" y="42" font-family="'Arial', sans-serif" font-size="28" font-weight="900"
+                                letter-spacing="1">LA CHILENA</text>
+                            <text x="87" y="58" font-family="'Arial', sans-serif" font-size="11" font-weight="bold"
+                                letter-spacing="2">EMPANADERÍA</text>
+                        </g>
+                    </svg>
+                </a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        style="color:white;">
+                        Categoría Empanada
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="mostrarProductos('frita')">Frita</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="mostrarProductos('horno')">Horno</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarProductos('dulce')"
+                        style="color:white;">Dulces</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="mostrarArmado()" style="color:white;">Arma tu
+                        Empanada</a></li>
+            </ul>
+
+            <button type="button" class="btn btn-light position-relative" data-bs-toggle="modal"
+                data-bs-target="#carritoModal">
+                <i class="fa fa-shopping-cart fa-lg" style="color: #E96B12;"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="contador-carrito">0</span>
+            </button>
+        </div>
+    </nav>
+
+
+    <div id="vista-inicio">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.cometeelcuento.com/wp-content/uploads/2020/07/MANOS-CORTADA.jpg"
+                        class="d-block w-100" alt="empanadas">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgndfhcyagmQnnORiTRbLau17bxzGZvnDZvFxfXwE6T6aamG_EsW7GgA&s=10"
+                        class="d-block w-100" alt="tabla empanadas">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://tb-static.uber.com/prod/image-proc/processed_images/aae29f93adb0438dc165ef97118f41cd/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                        class="d-block w-100" alt="caja empanadas">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <section id="quienes-somos" class="container mt-5 mb-5 p-5 rounded"
+            style="background-color: #fcfcfc; border: 1px solid #eee;">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h2 class="seccion-titulo">Quiénes Somos</h2>
+                    <p class="lead">Tradición y sabor en cada bocado.</p>
+                    <p>En <strong>La Chilena</strong>, somos una familia apasionada por nuestra gastronomía. Desde
+                        nuestros
+                        inicios, nos hemos dedicado a perfeccionar la auténtica receta de la empanada, utilizando
+                        ingredientes frescos y de la más alta calidad.</p>
+                    <p>Nuestro local es pequeño, pero nuestro cariño es inmenso. Queremos que cada vez que pruebes una
+                        de
+                        nuestras empanadas, sientas el calor del hogar y el verdadero sabor de nuestra tierra.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://www.chileestuyo.cl/wp-content/uploads/2021/04/Persona-haciendo-empanadas.jpg"
+                        alt="Cocinando empanadas" class="img-fluid rounded shadow-lg"
+                        style="height: 300px; object-fit: cover; width: 100%;">
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="container mt-5 mb-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h3 class="seccion-titulo"><i class="fa fa-map-marker"></i> Encuéntranos</h3>
+                    <p>Ven a visitarnos, pide para llevar o solicita nuestro nuevo servicio de delivery.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><strong>📍 Dirección:</strong> Av. Antonio Varas 880, Providencia.</li>
+                        <li class="mb-2"><strong>🕒 Horario:</strong> Martes a Domingo - 11:00 a 22:00 hrs.</li>
+                    </ul>
+                    <div class="rounded w-100 mt-3 overflow-hidden" style="height: 250px; border: 2px solid #E96B12;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.543870857536!2d-70.6146857!3d-33.4351343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf79590fbf55%3A0x6b45e21872ef8e02!2sAntonio%20Varas%20880%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1789944182282!5m2!1ses-419!2scl"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="seccion-titulo"><i class="fa fa-envelope"></i> Contáctanos</h3>
+                    <p>¿Tienes un pedido grande o alguna consulta? Escríbenos directamente.</p>
+
+                    <div class="card mt-4" style="border-left: 5px solid #E96B12; background-color: #f8f9fa;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fa-whatsapp text-success fa-lg"></i> WhatsApp Pedidos
+                            </h5>
+                            <p class="card-text">+56 9 1234 5678</p>
+                            <a href="#" class="btn text-white" style="background-color: #25D366;">Escríbenos al chat</a>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <p><i class="fa fa-phone me-2"></i> <strong>Local:</strong> (2) 2345 6789</p>
+                        <p><i class="fa fa-instagram me-2" style="color: #C13584;"></i> <strong>Instagram:</strong>
+                            @empanaderialachilena</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="vista-menu" style="display: none;">
+        <div class="container mt-5 mb-5">
+            <h2 id="titulo-seccion" class="text-center mb-4 seccion-titulo">Nuestro Menú</h2>
+            <div class="row g-4" id="contenedor-productos">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: #1a1a1a; color: white; border: 1px solid #E96B12;">
+                <div class="modal-header" style="border-bottom: 1px solid #333;">
+                    <h5 class="modal-title fw-bold" id="modal-titulo" style="color: #E96B12;">Nombre</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modal-img" src="" class="img-fluid rounded mb-3"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+                    <p id="modal-desc" class="text-white-50">Descripción</p>
+                    <h3 id="modal-precio" class="fw-bold mt-3">$0</h3>
+                </div>
+                <div class="modal-footer" style="border-top: 1px solid #333;">
+                    <button type="button" class="btn fw-bold w-100" style="background-color: #E96B12; color: white;"
+                        onclick="agregarDesdeModal()">
+                        Añadir al carrito <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="carritoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content" style="background-color: #1a1a1a; color: white; border: 1px solid #E96B12;">
+                <div class="modal-header" style="border-bottom: 1px solid #333;">
+                    <h5 class="modal-title fw-bold" style="color: #E96B12;"><i class="fa fa-shopping-cart"></i> Tu
+                        Pedido</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cuerpo-carrito">
+
+                </div>
+                <div class="modal-footer d-flex justify-content-between align-items-center"
+                    style="border-top: 1px solid #333;">
+                    <h4 class="mb-0 fw-bold">Total: $<span id="total-carrito">0</span></h4>
+                    <button type="button" class="btn fw-bold" style="background-color: #25D366; color: white;"
+                        onclick="alert('En el futuro esto abrirá WhatsApp con tu pedido.')">
+                        Comprar <i class="fa fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const productos = [
+        // EMPANADAS AL HORNO
+        {id: 1, categoria: "horno", precio: 2500, nombre: "Empanada de Pino Tradicional", desc: "Clásica empanada chilena con pino de carne de vacuno y cebolla, acompañada de huevo duro, aceituna y un toque de pasas.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0rCY_qb00PewYNgaEdgBXQ4lujbVOf02Su5_e0p_vIg&s=10"},
+        { id: 2, categoria: "horno", precio: 2800, nombre: "Pollo al Champiñón", desc: "Suave relleno de pollo desmenuzado, champiñones salteados y una cremosa salsa, envuelto en nuestra masa artesanal.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXEW6Xcl2hq9dMZYUg9062s02arSAd8VO6Q9NQhiKEIhfGmRT5ieX1neAM&s=10"},
+        { id: 3, categoria: "horno", precio: 2600, nombre: "Empanada Napolitana", desc: "Deliciosa combinación de jamón, queso, tomate y orégano, inspirada en los sabores de la clásica pizza napolitana.", img: "https://comidaslapunta.cl/wp-content/uploads/2016/01/Empanada-Napolitana.jpg?v=1641574343"},
+        { id: 4, categoria: "horno", precio: 3000, nombre: "Carne Mechada", desc: "Carne mechada desmenuzada y jugosa, acompañada de cebolla caramelizada y un toque de especias.", img: "https://takeabreak.cl/wp-content/uploads/2024/07/GRM03760-scaled.jpeg"},
+        { id: 5, categoria: "horno", precio: 2500, nombre: "Queso y Espinaca", desc: "Cremoso queso acompañado de espinaca salteada y suaves especias, en una masa dorada y crujiente.", img: "https://i0.wp.com/unacocinafeliz.com/wp-content/uploads/2022/10/DSC_0588-scaled.jpg?fit=1024%2C683&ssl=1"},
+        { id: 6, categoria: "horno", precio: 2800, nombre: "Pollo al Curry", desc: "Pollo desmenuzado sazonado con curry y especias, combinado con una suave salsa que aporta un sabor intenso y aromático.", img: "https://www.divinacocina.es/wp-content/uploads/empanadillas-de-pollo-al-curry.jpg"},
+        { id: 7, categoria: "horno", precio: 2500, nombre: "Choclo y Queso", desc: "Dulce choclo acompañado de queso derretido y un delicado toque de especias. Una combinación suave y reconfortante.", img: "https://cdnx.jumpseller.com/lashermanaschicureo/image/57418698/EMPANADA_CHOCLO.jpg?1732194406"},
+        { id: 8, categoria: "horno", precio: 2900, nombre: "Carne y Queso", desc: "Jugosa carne de vacuno combinada con abundante queso derretido, creando un relleno sabroso y cremoso.", img: "https://cdnx.jumpseller.com/lashermanaschicureo/image/57419113/EMPANADA_MECHADA.jpg?1732194578"},
+        { id: 9, categoria: "horno", precio: 2700, nombre: "Empanada Mediterránea", desc: "Sabrosa mezcla de pollo, aceitunas, tomate, queso y especias mediterráneas, con un toque fresco y aromático.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6C-PAHFDXB4Jlmol1OA_cjdkT4ceWg_fBB6ncnOWuLK4iBztb8rOKqQ&s=10"},
+        { id: 10, categoria: "horno", precio: 3200, nombre: "Camarón y Queso", desc: "Camarones salteados junto a queso fundido y suaves especias, creando una combinación cremosa con sabor a mar.", img: "https://tolivmarket-production.s3.sa-east-1.amazonaws.com/products/5470b7a9a2104cf99ad1f5772072dedd6be58f07929387bccc041ec62e87997c.jpg"},
+        // EMPANADAS FRITAS
+        { id: 11, categoria: "frita", precio: 2300, nombre: "Frita de Pino", desc: "Tradicional relleno de carne de vacuno y cebolla, acompañado de huevo duro, aceituna y un toque de pasas, dentro de una masa dorada y crujiente.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzqXHuRG3BNlEXVvcAz78LpnKJo6i6HCBuhuZ1PosjD92GY558njBu5M&s=10"},
+        { id: 12, categoria: "frita", precio: 2000, nombre: "Frita de Queso", desc: "Masa crujiente y dorada rellena con abundante queso fundido. Un clásico simple y delicioso.", img: "https://www.chefandcook.cl/carta/queso-solo-fritas.jpg"},
+        { id: 13, categoria: "frita", precio: 2800, nombre: "Frita de Camarón y Queso", desc: "Cremoso queso fundido combinado con camarones sazonados, todo envuelto en una masa crujiente.", img: "https://www.tipicochileno.cl/wp-content/uploads/2021/05/empanada-camaron-queso-1200-628.jpg"},
+        { id: 14, categoria: "frita", precio: 2600, nombre: "Carne y Cebolla Caramelizada", desc: "Carne de vacuno sazonada con cebolla lentamente caramelizada para conseguir un relleno jugoso y lleno de sabor.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGtM9jpfgelSq1AAxyMTOcBZz2XuuGfGlWC7asCXxNDQhAz09czTog6NLY&s=10"},
+        { id: 15, categoria: "frita", precio: 2400, nombre: "Pollo y Queso", desc: "Pollo desmenuzado acompañado de queso fundido y especias, en una masa dorada y crujiente.", img: "https://www.defer.cl/186-thickbox_default/empanadas-fritas-pollo-choclo-queso-x25.jpg"},
+        { id: 16, categoria: "frita", precio: 2700, nombre: "Frita Mexicana", desc: "Carne de vacuno sazonada con especias, acompañado de queso, maíz y un toque de ají para quienes disfrutan de sabores más intensos.", img: "https://resizer.glanacion.com/resizer/v2/empanadas-de-carne-cortada-a-YTRLESEOGZFU5LU3G4AOBZ2EP4.jpeg?auth=1bc85880de7b6e0e41370aa13090c3d1e8e04fbc6b564b783626d40a493f821f&width=420&height=280&quality=70&smart=true"},
+        { id: 17, categoria: "frita", precio: 2200, nombre: "Choclo y Queso", desc: "Cremoso queso fundido combinado con granos de choclo, logrando un equilibrio entre sabor dulce y salado.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV0vh3mG23bgXCUlDz43Uv-Wms0amMqULwY5xAsGgGCCohaZtDt6VWXWio&s=10"},
+        { id: 18, categoria: "frita", precio: 2200, nombre: "Jamón y Queso", desc: "Clásica combinación de jamón y queso fundido dentro de una masa crujiente y dorada.", img: "https://cdn0.recetasgratis.net/es/posts/2/3/4/empanadas_de_jamon_y_queso_fritas_77432_1200.jpg"},
+        { id: 19, categoria: "frita", precio: 2500, nombre: "Carne al Ají", desc: "Carne de vacuno sazonada con cebolla y un toque de ají, ideal para quienes buscan una empanada con un sabor más intenso.", img: "https://marubotana.tv/uploads/responsive/2026/03/empanadas-carne-cortada-a-cuchillo-768.webp"},
+        { id: 20, categoria: "frita", precio: 2400, nombre: "Frita Caprese", desc: "Mozzarella, tomate fresco y albahaca, combinados en una empanada crujiente inspirada en la clásica preparación italiana.", img: "https://saborargento.com.ar/wp-content/uploads/2023/06/Receta-de-Empanada-Caprese.jpg"},
+        // DULCES
+        { id: 21, categoria: "dulce", precio: 2000, nombre: "Pie de Limón", desc: "Suave crema de limón sobre una base de galleta, coronada con un delicado merengue dorado.", img: "https://www.recetasnestle.cl/sites/default/files/srh_recipes/49d627e69672b6915c22f2eb2dfd1b93.jpg"},
+        { id: 22, categoria: "dulce", precio: 2500, nombre: "Torta Tres Leches", desc: "Bizcocho húmedo bañado en una mezcla de tres leches, cubierto con una suave crema que realza su sabor.", img: "https://gourmet.iprospect.cl/wp-content/uploads/2016/09/Torta-3-leches.jpg"},
+        { id: 23, categoria: "dulce", precio: 2800, nombre: "Cheesecake de Frutos Rojos", desc: "Cremosa base de cheesecake sobre una crujiente base de galleta, acompañada de una deliciosa salsa de frutos rojos.", img: "https://www.infobae.com/resizer/v2/CTNAXVUCDVHFHD46FKY3NZ5Y4E.jpg?auth=68d26a8d1026659bc57249ce98afd4e495cfc8900ec0e0e089b0256f3be50158"},
+        { id: 24, categoria: "dulce", precio: 1800, nombre: "Brownie con Nueces", desc: "Intenso brownie de chocolate, húmedo por dentro y acompañado de trozos de nueces para un toque crujiente.", img: "https://thermomix-madrid-centro.es/media/Posts/attachments/2b44f5ef4e8c2c0577defbbbe3157cc6.jpg"},
+        { id: 25, categoria: "dulce", precio: 3000, nombre: "Tiramisú", desc: "Capas de suave bizcocho humedecido en café, crema de mascarpone y un delicado toque de cacao.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlBxNaK9YxYl_gcaYDZFG-ocKJQu6f8oKw4-Trxn6y5wIQA5R4LXGLgng&s=10"},
+        { id: 26, categoria: "dulce", precio: 2200, nombre: "Tarta de Manzana", desc: "Manzanas horneadas con canela sobre una suave masa, logrando una combinación casera, dulce y aromática.", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivy-2UoQfJqoneLWRSmtup4hsw7zm8F_vWtbjyCO1hqs8ZSkAbeWX_YJH3UZEcKir-6iZhJ1-NmPjpJHmyTOGLqXJsmmOv-lVbYYOLLZNcMZjCgYEU8nH894zH4TyAXB70j8JNiyfGclNwU9qC0NSK8TGZlYVaa-vNRETtFdgJ-wpvl6QwiY2qupyOC-rJ/s1600/Tarta-de-Manzanas-Almendras-%20Queso.jpg"},
+        { id: 27, categoria: "dulce", precio: 2000, nombre: "Mousse de Chocolate", desc: "Suave y aireada mousse preparada con chocolate, perfecta para los amantes de los sabores intensos y cremosos.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiZxDeYQVAi5488IMtyjg5AJ1gI3KQGlIoc6OULxWSmbdfbahN5BK1H83l&s=10"},
+        { id: 28, categoria: "dulce", precio: 1500, nombre: "Chilenito", desc: "Delicada masa horneada rellena con manjar y espolvoreada con azúcar flor, un clásico de la repostería chilena.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa-tCGTyyF7ZMA3RNNkhC9TyV1d3p_QtjZ1GUxoumaqrUhvAl2hdn-tVs&s=10"},
+        { id: 29, categoria: "dulce", precio: 1500, nombre: "Alfajor de Manjar", desc: "Dos suaves galletas unidas por un generoso relleno de manjar y terminadas con azúcar flor.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhTQPAEWRy_omlxSaRpuXxGZ0HizpuBDpeVd_T3CgBM2kj-D47PMIXCU&s=10"},
+        { id: 30, categoria: "dulce", precio: 2500, nombre: "Kuchen de Frutos Rojos", desc: "Suave masa horneada con un jugoso relleno de frutos rojos y una delicada cubierta, ideal para acompañar un café.", img: "https://cdn0.recetasgratis.net/es/posts/0/5/8/kuchen_de_frambuesa_con_leche_condensada_77850_600.jpg"},
+
+        // INGREDIENTES
+        { id: 31, categoria: "ingrediente", tipo: "masa", precio: 1000, nombre: "Masa Horno"},
+        { id: 32, categoria: "ingrediente", tipo: "masa", precio: 1000, nombre: "Masa Frita"},
+        { id: 33, categoria: "ingrediente", tipo: "proteina", precio: 1200, nombre: "Carne de vacuno"},
+        { id: 34, categoria: "ingrediente", tipo: "proteina", precio: 1500, nombre: "Carne mechada"},
+        { id: 35, categoria: "ingrediente", tipo: "proteina", precio: 1000, nombre: "Pollo"},
+        { id: 36, categoria: "ingrediente", tipo: "proteina", precio: 800, nombre: "Jamón"},
+        { id: 37, categoria: "ingrediente", tipo: "proteina", precio: 1500, nombre: "Camarones"},
+        { id: 38, categoria: "ingrediente", tipo: "queso", precio: 800, nombre: "Queso mozzarella"},
+        { id: 39, categoria: "ingrediente", tipo: "queso", precio: 800, nombre: "Queso mantecoso"},
+        { id: 40, categoria: "ingrediente", tipo: "queso", precio: 900, nombre: "Queso cheddar"},
+        { id: 41, categoria: "ingrediente", tipo: "queso", precio: 900, nombre: "Queso crema"},
+        { id: 42, categoria: "ingrediente", tipo: "vegetal", precio: 500, nombre: "Cebolla caramelizada"},
+        { id: 43, categoria: "ingrediente", tipo: "vegetal", precio: 400, nombre: "Tomate"},
+        { id: 44, categoria: "ingrediente", tipo: "vegetal", precio: 500, nombre: "Espinaca"},
+        { id: 45, categoria: "ingrediente", tipo: "vegetal", precio: 400, nombre: "Choclo / Maíz"},
+        { id: 46, categoria: "ingrediente", tipo: "vegetal", precio: 600, nombre: "Champiñones"},
+        { id: 47, categoria: "ingrediente", tipo: "extra", precio: 300, nombre: "Aceitunas"},
+        { id: 48, categoria: "ingrediente", tipo: "extra", precio: 300, nombre: "Huevo duro"},
+        { id: 49, categoria: "ingrediente", tipo: "extra", precio: 200, nombre: "Pasas"},
+        { id: 50, categoria: "ingrediente", tipo: "extra", precio: 300, nombre: "Ají"},
+        { id: 51, categoria: "ingrediente", tipo: "extra", precio: 200, nombre: "Orégano / Albahaca" }
+    ];
+
+    function volverAlInicio() {
+        document.getElementById('vista-inicio').style.display = 'block';
+        document.getElementById('vista-menu').style.display = 'none';
+    }
+
+    function mostrarProductos(categoria) {
+        document.getElementById('vista-inicio').style.display = 'none';
+        document.getElementById('vista-menu').style.display = 'block';
+
+        const contenedor = document.getElementById('contenedor-productos');
+        const titulo = document.getElementById('titulo-seccion');
+        contenedor.innerHTML = '';
+
+        if (categoria === 'frita') titulo.innerText = "Empanadas Fritas";
+        if (categoria === 'horno') titulo.innerText = "Empanadas al Horno";
+        if (categoria === 'dulce') titulo.innerText = "Nuestros Dulces";
+
+        const filtrados = productos.filter(p => p.categoria === categoria);
+
+        filtrados.forEach(p => {
+            let imagenSrc = p.img !== "" ? p.img :
+                "https://via.placeholder.com/400x250/1a1a1a/E96B12?text=FOTO+AQUI";
+            contenedor.innerHTML += `
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0 shadow-lg card-empanada" style="background-color: #1a1a1a; cursor: pointer; border-radius: 12px; overflow: hidden;" onclick="abrirModal(${p.id})">
+                            <img src="${imagenSrc}" class="card-img-top" alt="${p.nombre}" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center d-flex flex-column">
+                                <h5 class="card-title fw-bold" style="color: #E96B12;">${p.nombre}</h5>
+                                <p class="text-white-50 small mt-auto mb-2">Presiona para ver detalles</p>
+                                <h5 class="text-white fw-bold mb-0">$${p.precio}</h5>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        });
+    }
+
+    let productoSeleccionadoId = null;
+
+    function abrirModal(id) {
+        const producto = productos.find(p => p.id === id);
+        productoSeleccionadoId = producto.id;
+
+        document.getElementById('modal-titulo').innerText = producto.nombre;
+        document.getElementById('modal-desc').innerText = producto.desc;
+        document.getElementById('modal-precio').innerText = "$" + producto.precio;
+
+        let img = producto.img !== "" ? producto.img :
+            "https://via.placeholder.com/400x250/1a1a1a/E96B12?text=FOTO+AQUI";
+        document.getElementById('modal-img').src = img;
+
+        let modal = new bootstrap.Modal(document.getElementById('productoModal'));
+        modal.show();
+    }
+
+    function mostrarArmado() {
+        document.getElementById('vista-inicio').style.display = 'none';
+        document.getElementById('vista-menu').style.display = 'block';
+
+        const contenedor = document.getElementById('contenedor-productos');
+        document.getElementById('titulo-seccion').innerText = "Crea tu Empanada Perfecta";
+
+        const dibujarIngredientes = (tipo, esRadio) => {
+            let items = productos.filter(p => p.tipo === tipo);
+            return items.map((item, i) => `
+                    <div class="mb-2">
+                        <input type="${esRadio ? 'radio' : 'checkbox'}" class="check-ingrediente" name="${tipo}" value="${item.id}" id="ing_${item.id}" ${esRadio && i===0 ? 'checked' : ''} onchange="calcularPrecioArmado()">
+                        <label class="text-white" for="ing_${item.id}">${item.nombre} <span class="text-white-50">(+$${item.precio})</span></label>
+                    </div>
+                `).join('');
+        };
+
+        contenedor.innerHTML = `
+                <div class="col-12 col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-lg p-4 mb-5" style="background-color: #1a1a1a; color: white; border-radius: 12px; border: 1px solid #333 !important;">
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #E96B12;">1. Elige tu masa</h5>
+                                ${dibujarIngredientes('masa', true)}
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #E96B12;">2. Proteínas</h5>
+                                ${dibujarIngredientes('proteina', false)}
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #E96B12;">3. Quesos</h5>
+                                ${dibujarIngredientes('queso', false)}
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #E96B12;">4. Vegetales</h5>
+                                ${dibujarIngredientes('vegetal', false)}
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5 class="fw-bold mb-3" style="color: #E96B12;">5. Extras</h5>
+                                ${dibujarIngredientes('extra', false)}
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3 p-3 rounded" style="background-color: #2a2a2a; border: 1px solid #E96B12;">
+                            <h4 class="mb-0 text-white fw-bold">Total: $<span id="precio-armado">0</span></h4>
+                            <button class="btn fw-bold py-2 px-4" style="background-color: #E96B12; color: white;" onclick="agregarArmadaAlCarrito()">
+                                Añadir al Carrito <i class="fa fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        calcularPrecioArmado();
+    }
+
+    function calcularPrecioArmado() {
+        let total = 0;
+        document.querySelectorAll('.check-ingrediente:checked').forEach(input => {
+            const ingrediente = productos.find(p => p.id == input.value);
+            if (ingrediente) total += ingrediente.precio;
+        });
+        document.getElementById('precio-armado').innerText = total;
+    }
+
+    let carrito = [];
+
+    function actualizarUI() {
+        document.getElementById('contador-carrito').innerText = carrito.length;
+
+        const lista = document.getElementById('cuerpo-carrito');
+        let totalCarrito = 0;
+        lista.innerHTML = '';
+
+        if (carrito.length === 0) {
+            lista.innerHTML =
+                '<p class="text-center text-muted my-4"><i class="fa fa-shopping-basket fa-2x mb-2"></i><br>Tu carrito está vacío.</p>';
+        } else {
+            carrito.forEach((item, index) => {
+                totalCarrito += item.precio;
+                lista.innerHTML += `
+                        <div class="d-flex justify-content-between align-items-center mb-3" style="border-bottom: 1px solid #333; padding-bottom: 10px;">
+                            <div style="max-width: 70%;">
+                                <h6 class="mb-0 text-white">${item.nombre}</h6>
+                                <small class="text-white-50" style="font-size: 0.8em;">${item.desc}</small>
+                            </div>
+                            <div class="text-end">
+                                <span class="fw-bold" style="color: #E96B12;">$${item.precio}</span><br>
+                                <button class="btn btn-sm btn-link text-danger p-0 mt-1 text-decoration-none" onclick="eliminarDelCarrito(${index})">Eliminar <i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+            });
+        }
+        document.getElementById('total-carrito').innerText = totalCarrito;
+    }
+
+    function agregarDesdeModal() {
+        const producto = productos.find(p => p.id === productoSeleccionadoId);
+        carrito.push({
+            nombre: producto.nombre,
+            precio: producto.precio,
+            desc: "1 Unidad normal"
+        });
+        actualizarUI();
+        bootstrap.Modal.getInstance(document.getElementById('productoModal')).hide();
+    }
+
+    function agregarArmadaAlCarrito() {
+        let precioFinal = parseInt(document.getElementById('precio-armado').innerText);
+
+        let ingredientesElegidos = [];
+        document.querySelectorAll('.check-ingrediente:checked').forEach(input => {
+            ingredientesElegidos.push(productos.find(p => p.id == input.value).nombre);
+        });
+
+        carrito.push({
+            nombre: "Empanada Personalizada",
+            precio: precioFinal,
+            desc: ingredientesElegidos.join(', ')
+        });
+
+        actualizarUI();
+        alert("¡Empanada personalizada añadida al carrito!");
+        volverAlInicio();
+    }
+
+    function eliminarDelCarrito(index) {
+        carrito.splice(index, 1);
+        actualizarUI();
+    }
+
+    window.onload = () => {
+        volverAlInicio();
+        actualizarUI();
+    }
+    </script>
+</body>
+
+</html>
